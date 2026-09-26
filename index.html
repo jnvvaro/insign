@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Reel Insights</title><style>
+:root{--bg:#080e12;--card:#252a30;--track:#22272c;--text:#f7f7f8;--muted:#a7a7b1;--line:#2a2f34;--accent:#ef12c5;--purple:#8438ff}*{box-sizing:border-box}html,body{margin:0;background:#05090c;color:var(--text);font-family:Arial,Helvetica,sans-serif}.app{width:min(100%,672px);min-height:100vh;margin:auto;background:var(--bg);position:relative;overflow:hidden}.hero{padding:28px 27px 23px}.reel{width:218px;height:385px;border-radius:14px;background:#000;margin:0 auto 45px;overflow:hidden}.reel video,.reel-placeholder{width:100%;height:100%;object-fit:cover;background:#000}.reel video:not([src]){display:none}.metric-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.metric{text-align:center}.metric svg{width:36px;height:36px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.metric b{display:block;font-size:22px;margin-top:8px}.tabs{height:86px;display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:8}.tab{border:0;border-bottom:4px solid transparent;background:none;color:var(--muted);font-weight:800;font-size:21px}.tab.active{color:var(--text);border-color:#fff}.panel{display:none}.panel.active{display:block}.content{padding:39px 27px 60px}h2{font-size:26px;margin:0 0 23px;font-weight:800;letter-spacing:-.4px}.info{display:inline-grid;place-items:center;font-size:16px;border:2px solid currentColor;width:27px;height:27px;border-radius:50%;vertical-align:2px;margin-left:6px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:0 0 42px}.card{height:138px;background:var(--card);border-radius:24px;padding:28px}.card span{display:block;color:#b3b3c0;font-size:18px;font-weight:700}.card strong{display:block;font-size:34px;margin-top:26px}.muted{color:var(--muted);font-size:18px;margin:-12px 0 30px}.rate-list{margin-bottom:57px}.rate{display:grid;grid-template-columns:83px 1fr auto;align-items:center;min-height:123px}.round{width:82px;height:82px;border-radius:50%;background:#22282d;display:grid;place-items:center}.round svg{width:43px;height:43px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.rate>b{font-size:21px;margin-left:18px}.right{text-align:right}.right strong{display:block;font-size:27px}.right em{display:block;color:#aaa;font-style:normal;font-size:17px;margin-top:5px}.right .green{color:#20c659}.unavailable{height:445px;position:relative;color:#9b9ba4;padding:0 27px}.unavailable hr{border:0;border-top:1px solid var(--line);margin:-12px 0 105px}.unavailable>span{position:absolute;top:112px;left:180px}.unavailable>div{display:flex;justify-content:space-between}.bars{margin-top:-5px}.bar{margin:0 0 19px}.bar-head{display:flex;justify-content:space-between;align-items:end;font-size:21px;margin-bottom:11px}.bar-head b{font-size:22px}.track{height:14px;background:var(--track);border-radius:10px;overflow:hidden;margin-right:82px}.fill{height:100%;min-width:2px;background:var(--accent);border-radius:10px}.ad-title{margin-top:50px}.boost{display:grid;grid-template-columns:50px 1fr auto;align-items:center;font-size:21px}.boost svg{width:40px;height:40px;fill:none;stroke:#fff;stroke-width:2.2}.boost span{font-size:48px;color:#9da1aa;font-weight:200}.simple{margin:-9px 0 55px}.simple p{display:flex;justify-content:space-between;font-size:25px;margin:0 0 37px}.mini-reel{width:160px;height:285px;background:#000;border-radius:14px;margin:28px auto 111px;position:relative}.mini-reel svg{position:absolute;width:46px;height:46px;top:120px;left:57px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linejoin:round}.chart{height:245px;position:relative;margin-left:59px}.chart .line{position:absolute;left:0;right:20px;border-top:1px solid var(--line)}.l1{top:15px}.l2{top:100px}.l3{top:185px}.chart svg{position:absolute;left:0;right:20px;top:15px;width:calc(100% - 20px);height:171px;overflow:visible}.chart polyline{fill:none;stroke:var(--accent);stroke-width:7;stroke-linejoin:round;stroke-linecap:round}.y{position:absolute;left:-55px;color:#aaa}.y30{top:4px}.y15{top:89px}.y0{top:174px}.x{position:absolute;top:201px;color:#aaa;font-size:17px}.x1{right:20px}.pills{display:flex;gap:13px;margin:35px 0 32px}.pills button{border:2px solid #32383d;border-radius:35px;color:#fff;background:transparent;padding:18px 22px;font-size:18px;font-weight:bold}.pills button.active{background:#2d3339;border-color:#2d3339}.bars.big .bar{margin-bottom:24px}.bars.big .track{margin-right:96px}.defs{position:absolute;width:0;height:0}.edit-fab{position:fixed;right:max(18px,calc((100vw - 672px)/2 + 18px));bottom:24px;width:57px;height:57px;border:0;border-radius:50%;z-index:20;background:#fff;color:#111;font-size:28px;box-shadow:0 6px 20px #0009}.editor{position:fixed;top:0;right:-350px;width:min(350px,88vw);height:100vh;background:#171c20;z-index:30;padding:20px;box-shadow:-7px 0 25px #0008;transition:.3s;overflow:auto}.editor.open{right:0}.editor-head{display:flex;justify-content:space-between;font-size:23px;margin-bottom:25px}.editor-head button{background:none;border:0;color:#fff;font-size:32px}.editor label{display:flex;justify-content:space-between;align-items:center;margin:18px 0;color:#ddd}.editor input[type=color]{width:70px;height:36px;background:none;border:0}.editor input[type=file]{max-width:185px}.hint{color:#aaa;line-height:1.5}.editor-actions{display:grid;gap:10px;margin-top:25px}.editor-actions button,.import{justify-content:center!important;padding:13px;border:0;border-radius:10px;background:#fff;color:#111;font-weight:bold;text-align:center}.import input{display:none}.editor-actions .danger{background:#822f38;color:#fff}[contenteditable=true]{outline:2px dashed var(--accent);outline-offset:4px}.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,100px);background:#fff;color:#111;padding:12px 20px;border-radius:25px;transition:.25s;z-index:40}.toast.show{transform:translate(-50%,0)}
+@media(max-width:520px){.hero{padding:25px 20px}.reel{width:170px;height:300px;margin-bottom:32px}.metric-row{gap:8px}.metric svg{width:30px}.metric b{font-size:18px}.tab{font-size:17px}.content{padding:33px 20px}h2{font-size:22px}.cards{gap:14px}.card{height:120px;padding:22px 18px}.card strong{font-size:28px}.round{width:68px;height:68px}.rate{grid-template-columns:70px 1fr auto}.rate>b{font-size:18px}.right strong{font-size:23px}.track{margin-right:70px}.unavailable>span{left:100px}}
+
+
+.demo-note{position:fixed;top:3px;right:5px;z-index:99;font-size:7px;color:#777}.image-box{position:relative;display:block;cursor:pointer}.image-box img{display:none;width:100%;height:100%;object-fit:cover}.image-box.has-image img{display:block}.image-box.has-image .reel-placeholder{display:none}.reel-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#777;font-size:12px;background:#000}.play-overlay{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}.play-overlay svg{width:48px!important;height:48px!important;position:static!important;fill:none;stroke:#fff;stroke-width:2.2}.watch-img{width:160px;height:285px;margin:28px auto 75px;border-radius:14px;overflow:hidden;background:#000}.mini-reel img{position:absolute;inset:0}.views-section{margin-bottom:52px}.filter-row{display:flex;gap:12px;margin:0 0 56px}.filter-row button{padding:16px 21px;border:2px solid #32383d;border-radius:35px;background:transparent;color:#fff;font-weight:800}.filter-row button.active{background:#2d3339}.data-chart{display:grid;grid-template-columns:58px 1fr;height:285px}.chart-axis{position:relative;height:220px;color:var(--muted);font-size:16px}.chart-axis span{position:absolute;right:10px}.chart-axis span:nth-child(1){top:-8px}.chart-axis span:nth-child(2){top:102px}.chart-axis span:nth-child(3){top:212px}.chart-area{position:relative;height:260px}.gridline{position:absolute;left:0;right:0;border-top:1px solid var(--line)}.gridline.top{top:0}.gridline.middle{top:110px}.gridline.bottom{top:220px}.chart-area svg{position:absolute;top:0;left:0;width:100%;height:220px}.chart-area polyline{fill:none;stroke:var(--accent);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}.date{position:absolute;top:238px;color:var(--muted);font-size:15px}.date.start{left:0}.date.center{left:50%;transform:translateX(-50%)}.date.end{right:0}.diagram-editor{margin-top:18px;padding-top:14px;border-top:1px solid #343b40}.diagram-editor h3{font-size:16px}.diagram-points{display:grid;grid-template-columns:1fr 1fr;gap:7px}.diagram-points label{display:grid!important;margin:0!important;font-size:12px}.diagram-points input{width:100%;padding:8px;background:#282f34;color:#fff;border:1px solid #444;border-radius:7px}.diagram-buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:10px 0}.diagram-buttons button{padding:9px;border:0;border-radius:7px}.recording-mode .edit-fab,.recording-mode .editor{display:none!important}
+@media(max-width:520px){.app{width:100%;max-width:none}.hero{padding:15px 16px 13px}.reel{width:128px;height:228px;margin-bottom:26px}.metric-row{gap:5px}.metric svg{width:25px;height:25px}.metric b{font-size:14px;margin-top:4px}.tabs{height:51px}.tab{font-size:14px}.content{padding:23px 16px 40px}h2{font-size:17px;margin-bottom:14px}.info{width:19px;height:19px;font-size:11px}.cards{gap:12px;margin-bottom:28px}.card{height:82px;padding:16px;border-radius:15px}.card span{font-size:12px}.card strong{font-size:21px;margin-top:15px}.filter-row{gap:7px;margin-bottom:36px}.filter-row button{padding:10px 13px;font-size:11px}.data-chart{grid-template-columns:38px 1fr;height:180px}.chart-axis{height:132px;font-size:11px}.chart-axis span:nth-child(1){top:-5px}.chart-axis span:nth-child(2){top:61px}.chart-axis span:nth-child(3){top:126px}.chart-area{height:162px}.gridline.middle{top:66px}.gridline.bottom{top:132px}.chart-area svg{height:132px}.chart-area polyline{stroke-width:4}.date{top:143px;font-size:10px}.views-section{margin-bottom:34px}.watch-img,.mini-reel{width:96px;height:171px;margin:17px auto 46px}.rate{grid-template-columns:51px 1fr auto;min-height:73px}.round{width:49px;height:49px}.round svg{width:27px;height:27px}.rate>b{font-size:14px}.right strong{font-size:16px}.right em{font-size:11px}.bar-head{font-size:13px}.bar-head b{font-size:14px}.track{height:8px;margin-right:48px}.simple p{font-size:16px;margin-bottom:22px}}
+
+/* Full-screen mobile editor fix */
+@media (max-width:520px){
+  body.editor-open{overflow:hidden;touch-action:none}
+  .editor{position:fixed;top:0;right:-100%;left:auto;width:100%;max-width:100%;height:100dvh;min-height:100dvh;padding:calc(18px + env(safe-area-inset-top)) 18px calc(130px + env(safe-area-inset-bottom));overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#171c20;box-shadow:none;transition:right .3s ease}
+  .editor.open{right:0}
+  .editor-head{position:sticky;top:calc(-18px - env(safe-area-inset-top));z-index:20;display:flex;align-items:center;justify-content:space-between;margin:calc(-18px - env(safe-area-inset-top)) -18px 22px;padding:calc(18px + env(safe-area-inset-top)) 18px 15px;border-bottom:1px solid #30363b;background:#171c20}
+  .editor-head strong{font-size:21px;line-height:1.2}
+  .editor-head button{display:grid;width:45px;height:45px;padding:0;place-items:center;border:0;border-radius:50%;background:transparent;color:#fff;font-size:36px;line-height:1}
+  .editor>label{display:grid;grid-template-columns:1fr;gap:9px;margin:18px 0;color:#ddd;font-size:15px}
+  .editor input[type=file]{width:100%;max-width:100%;min-height:43px}
+  .editor input[type=color]{width:100%;height:47px;padding:0;border:1px solid #353c42;border-radius:10px;background:#252b30}
+  .editor input[type=text],.editor input[type=number]{width:100%;max-width:100%;min-height:47px;padding:10px 12px;border:1px solid #424a50;border-radius:9px;outline:none;background:#282f34;color:#fff;font-size:16px}
+  .editor input[type=text]:focus,.editor input[type=number]:focus{border-color:var(--accent)}
+  .editor .hint{margin:17px 0;color:#a7a7b1;font-size:14px;line-height:1.55}
+  .views-editor,.diagram-editor{margin-top:25px;padding-top:21px;border-top:1px solid #343b40}
+  .views-editor h3,.diagram-editor h3{margin:0 0 12px;color:#fff;font-size:20px;line-height:1.3}
+  .point-inputs,.diagram-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+  .point-inputs label,.diagram-points label{display:grid!important;grid-template-columns:1fr!important;gap:7px;min-width:0;margin:0!important;color:#ddd;font-size:14px}
+  .point-inputs input,.diagram-points input{width:100%!important;max-width:100%!important;height:49px;padding:9px 11px;border:1px solid #424a50;border-radius:9px;background:#282f34;color:#fff;font-size:16px;font-weight:700}
+  .point-actions,.diagram-buttons{position:static;display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;margin:17px 0 25px}
+  .point-actions button,.diagram-buttons button{width:100%;min-height:49px;padding:11px 8px;border:0;border-radius:10px;background:#f3f3f3;color:#111;font-size:14px;font-weight:800}
+  .point-actions button:active,.diagram-buttons button:active{transform:scale(.98)}
+  .views-editor>label{display:grid;grid-template-columns:1fr;gap:7px;margin:15px 0}
+  .views-editor>label input{width:100%!important;max-width:100%!important}
+  .editor-actions{display:grid;grid-template-columns:1fr;gap:11px;margin-top:28px;padding-bottom:calc(45px + env(safe-area-inset-bottom))}
+  .editor-actions button,.editor-actions .import{display:grid;width:100%;min-height:50px;padding:12px;place-items:center;border:0;border-radius:10px;background:#fff;color:#111;font-size:15px;font-weight:800;text-align:center}
+  .editor-actions .danger{background:#822f38;color:#fff}
+  .editor-actions .import input{display:none}
+  .editor::after{content:"";display:block;width:100%;height:calc(90px + env(safe-area-inset-bottom))}
+}
+
+/* FINAL MOBILE LAYOUT AND COMPACT EDITOR */
+html{font-size:16px}body{overflow-x:hidden}.app{max-width:540px}.editor-backdrop{position:fixed;inset:0;z-index:28;background:rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:.2s}.editor-backdrop.show{opacity:1;pointer-events:auto}.editor-handle{display:none}
+@media(max-width:600px){
+  .app{width:100%;max-width:none}.hero{padding:18px 16px 16px}.content{padding:26px 16px 48px}.reel{width:150px;height:267px;margin-bottom:24px;border-radius:12px}.metric-row{gap:4px}.metric svg{width:27px;height:27px}.metric b{font-size:16px;margin-top:5px}.tabs{height:64px}.tab{font-size:15px;border-bottom-width:3px}h2{font-size:20px;line-height:1.18;margin-bottom:18px}.info{width:23px;height:23px;font-size:13px}.cards{gap:10px;margin-bottom:30px}.card{height:105px;padding:18px;border-radius:17px}.card span{font-size:14px}.card strong{font-size:25px;margin-top:18px}.muted{font-size:15px}.rate{grid-template-columns:61px 1fr auto;min-height:92px}.round{width:58px;height:58px}.round svg{width:34px;height:34px}.rate>b{font-size:16px;margin-left:10px}.right strong{font-size:20px}.right em{font-size:13px}.simple p{font-size:19px;margin-bottom:27px}.watch-img,.mini-reel{width:130px;height:231px}.filter-row{gap:7px;overflow-x:auto}.filter-row button,.pills button{padding:12px 14px;font-size:14px;white-space:nowrap}.data-chart{grid-template-columns:45px 1fr;height:245px}.chart-axis,.date{font-size:13px}.bar-head{font-size:17px}.bar-head b{font-size:18px}.track{margin-right:0;height:11px}.edit-fab{right:14px;bottom:calc(16px + env(safe-area-inset-bottom));width:50px;height:50px;font-size:24px}
+  .editor{position:fixed!important;top:auto!important;right:0!important;bottom:-100%!important;left:0!important;width:100%!important;height:40vh!important;min-height:260px!important;max-height:430px!important;margin:0!important;padding:10px 15px calc(18px + env(safe-area-inset-bottom))!important;overflow-y:auto!important;overflow-x:hidden!important;border:1px solid #3a4147!important;border-bottom:0!important;border-radius:24px 24px 0 0!important;background:#171c20!important;box-shadow:0 -10px 35px rgba(0,0,0,.75)!important;transition:bottom .28s ease!important;z-index:30!important}
+  .editor.open{bottom:0!important}.editor-handle{display:block;width:46px;height:5px;margin:0 auto 8px;border-radius:10px;background:#596168}.editor-head{position:sticky;top:-10px;z-index:5;margin:0 -15px 12px!important;padding:10px 15px!important;border-bottom:1px solid #30373c;background:#171c20}.editor-head strong{font-size:18px}.editor-head button{display:grid;place-items:center;width:37px;height:37px;padding:0;border-radius:50%;background:#292f34;font-size:25px}.editor label{display:grid!important;grid-template-columns:1fr!important;gap:5px!important;margin:10px 0!important;font-size:14px}.editor input[type=file],.editor input[type=text],.editor input[type=number]{width:100%!important;max-width:100%!important;min-width:0!important}.editor input[type=file]{min-height:40px;padding:7px;border:1px solid #3b4349;border-radius:9px;background:#242b30}.editor input[type=text],.editor input[type=number]{min-height:42px;padding:9px 11px;border:1px solid #434b51;border-radius:9px;background:#272e33;color:#fff;font-size:16px}.editor input:focus{border-color:var(--accent)!important;outline:none}.diagram-points{grid-template-columns:1fr 1fr!important;gap:7px}.diagram-editor{margin-top:12px;padding-top:10px}.diagram-editor h3{font-size:15px;margin:8px 0}.diagram-buttons{gap:7px}.diagram-buttons button{min-height:40px}.editor-actions{grid-template-columns:1fr!important;gap:8px!important;margin-top:18px!important;padding-bottom:15px!important}.editor-actions button,.editor-actions .import{min-height:44px!important;padding:10px!important}.editor::after{height:30px!important}body.editor-open .app{padding-bottom:41vh}body.editor-open .edit-fab{bottom:calc(40vh + 10px)}
+}
+
+.live-editor{margin-top:14px;padding-top:10px;border-top:1px solid #343b40}.live-editor h3{font-size:15px;margin:10px 0}.live-control-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:center;margin:8px 0}.live-control-row span{font-size:13px;color:#c6c8cb}.live-control-row input{width:100%!important}.diagram-buttons button{touch-action:manipulation;cursor:pointer}.filter-row button{touch-action:manipulation;cursor:pointer}.edit-section-focus{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
+
+</style>
+</head>
+<body>
+<div class="app" id="app"></span>
+  <section class="hero">
+    <label class="reel image-box" id="topBox"><img id="topImage"><span class="reel-placeholder">Tap to add image</span><span class="play-overlay"><svg><use href="#play"/></svg></span><input id="topInput" type="file" accept="image/*" hidden></label>
+    <div class="metric-row">
+      <div class="metric"><svg><use href="#heart"/></svg><b data-key="likes">20</b></div>
+      <div class="metric"><svg><use href="#comment"/></svg><b data-key="comments">0</b></div>
+      <div class="metric"><svg><use href="#repost"/></svg><b data-key="reposts">0</b></div>
+      <div class="metric"><svg><use href="#share"/></svg><b data-key="shares">2,5K</b></div>
+      <div class="metric"><svg><use href="#save"/></svg><b data-key="saves">0</b></div>
+    </div>
+  </section>
+  <nav class="tabs"><button class="tab active" data-tab="overview">Overview</button><button class="tab" data-tab="engagement">Engagement</button><button class="tab" data-tab="audience">Audience</button></nav>
+
+  <main>
+    <section class="panel active" id="overview">
+      <div class="content">
+        <h2>Summary <span class="info">i</span></h2>
+        <div class="cards">
+          <div class="card"><span>Views</span><strong data-key="views">39,642</strong></div>
+          <div class="card"><span>Accounts reached</span><strong data-key="reached">419</strong></div>
+          <div class="card"><span>Average watch time</span><strong data-key="watchTime">20s</strong></div>
+          <div class="card"><span>Follows</span><strong data-key="follows">0</strong></div>
+        </div>
+        <section class="views-section"><h2>Views over time <span class="info">i</span></h2><div class="filter-row"><button class="active">All</button><button>Followers</button><button>Non-followers</button></div><div class="data-chart views-chart"><div class="chart-axis"><span>5K</span><span>2.5K</span><span>0</span></div><div class="chart-area"><i class="gridline top"></i><i class="gridline middle"></i><i class="gridline bottom"></i><svg viewBox="0 0 540 220" preserveAspectRatio="none"><polyline id="viewsLine"/></svg><span class="date start">Sep 19</span><span class="date center">Sep 22</span><span class="date end">Sep 25</span></div></div></section><h2>What affects your views <span class="info">i</span></h2><p class="muted">Rates are listed in order of importance to reach.</p>
+        <div class="rate-list">
+          <div class="rate"><span class="round"><svg><use href="#clock"/></svg></span><b>Skip rate</b><span class="right"><strong data-key="skipRate">4.1%</strong><em>Higher</em></span></div>
+          <div class="rate"><span class="round"><svg><use href="#share"/></svg></span><b>Share rate</b><span class="right"><strong data-key="shareRate">30.9%</strong><em class="green">Higher</em></span></div>
+          <div class="rate"><span class="round"><svg><use href="#heart"/></svg></span><b>Like rate</b><span class="right"><strong data-key="likeRate">0.2%</strong><em>Lower</em></span></div>
+          <div class="rate"><span class="round"><svg><use href="#save"/></svg></span><b>Save rate</b><span class="right"><strong data-key="saveRate">0.0%</strong><em>Lower</em></span></div>
+          <div class="rate"><span class="round"><svg><use href="#repost"/></svg></span><b>Repost rate</b><span class="right"><strong data-key="repostRate">0.0%</strong><em>Lower</em></span></div>
+          <div class="rate"><span class="round"><svg><use href="#comment"/></svg></span><b>Comment rate</b><span class="right"><strong data-key="commentRate">0.0%</strong><em>Lower</em></span></div>
+        </div>
+        <h2>How long people watched your reel <span class="info">i</span></h2>
+        <div class="chart-block"><label class="watch-img image-box" id="watchBox"><img id="watchImage"><span class="reel-placeholder">Tap to add image</span><span class="play-overlay"><svg><use href="#play"/></svg></span><input id="watchInput" type="file" accept="image/*" hidden></label><div class="data-chart"><div class="chart-axis"><span>100%</span><span>50%</span><span>0</span></div><div class="chart-area"><i class="gridline top"></i><i class="gridline middle"></i><i class="gridline bottom"></i><svg viewBox="0 0 540 220" preserveAspectRatio="none"><polyline id="watchLine"/></svg><span class="date start">0:00</span><span class="date end">0:35</span></div></div></div>
+        <h2>Top sources of views <span class="info">i</span></h2>
+        <div id="sources" class="bars"></div>
+        <h2 class="ad-title">Ad</h2><div class="boost"><svg><use href="#trend"/></svg><b>Boost this Reel</b><span>›</span></div>
+      </div>
+    </section>
+
+    <section class="panel" id="engagement"><div class="content">
+      <h2>Actions after viewing <span class="info">i</span></h2>
+      <div class="simple"><p><span>Profile visits</span><b data-key="profileVisits">5</b></p><p><span>Follows</span><b data-key="follows">0</b></p></div>
+      <h2>Interactions <span class="info">i</span></h2>
+      <div class="simple"><p><span>Likes</span><b data-key="likes">20</b></p><p><span>Comments</span><b data-key="comments">0</b></p><p><span>Reposts</span><b data-key="reposts">0</b></p><p><span>Shares</span><b data-key="shares">2,5K</b></p><p><span>Saves</span><b data-key="saves">0</b></p></div>
+      <h2>When people liked your reel <span class="info">i</span></h2>
+      <label class="mini-reel image-box" id="engBox"><img id="engImage"><span class="reel-placeholder">Tap to add image</span><span class="play-overlay"><svg><use href="#play"/></svg></span><input id="engInput" type="file" accept="image/*" hidden></label>
+      <div class="chart"><span class="y y30">30%</span><span class="y y15">15%</span><span class="y y0">0</span><i class="line l1"></i><i class="line l2"></i><i class="line l3"></i><svg viewBox="0 0 540 190" preserveAspectRatio="none"><polyline id="chartLine" points="0,90 38,62 76,110 114,61 152,178 190,153 266,153 304,177 342,177 380,153 418,177 456,153 494,153 532,177"/></svg><span class="x x0">0:00</span><span class="x x1">0:14</span></div>
+    </div></section>
+
+    <section class="panel" id="audience"><div class="content">
+      <h2>Who viewed your reel <span class="info">i</span></h2><div id="viewerBars" class="bars big"></div>
+      <h2>Audience details <span class="info">i</span></h2>
+      <div class="pills"><button class="active" data-group="age">Age</button><button data-group="country">Country</button><button data-group="gender">Gender</button></div>
+      <div id="audienceBars" class="bars big"></div>
+    </div></section>
+  </main>
+
+  <button class="edit-fab" id="editBtn" aria-label="Edit">✎</button>
+  <div class="editor-backdrop" id="editorBackdrop"></div><aside class="editor" id="editor"><div class="editor-handle"></div><div class="editor-head"><strong>Edit page</strong><button id="closeEditor">×</button></div>
+    <label>Top image<input id="editTopInput" type="file" accept="image/*"></label><label>How long image<input id="editWatchInput" type="file" accept="image/*"></label><label>Engagement image<input id="editEngInput" type="file" accept="image/*"></label><section class="live-editor"><h3>Statistics</h3><div id="liveStatControls"></div><h3>Bars and percentages</h3><div id="liveBarControls"></div></section><div id="diagramControls"></div>
+    <label>Background<input type="color" id="bgColor" value="#080e12"></label><label>Cards<input type="color" id="cardColor" value="#252a30"></label><label>Accent<input type="color" id="accentColor" value="#ef12c5"></label>
+    <p class="hint">Tap any text or number on the page to edit it.</p>
+    <div class="editor-actions"><button id="saveBtn">Save</button><button id="exportBtn">Export</button><label class="import">Import<input type="file" id="importInput" accept="application/json"></label><button id="resetBtn" class="danger">Reset</button></div>
+  </aside>
+  <div class="toast" id="toast"></div>
+</div>
+<svg class="defs" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="heart" viewBox="0 0 32 32"><path d="M16 27S4 20 4 11.5C4 4.5 13 2 16 8c3-6 12-3.5 12 3.5C28 20 16 27 16 27Z"/></symbol>
+<symbol id="comment" viewBox="0 0 32 32"><path d="M27 15.5A11 11 0 1 1 22.5 6.7 11 11 0 0 1 27 15.5Z"/><path d="m21.5 24 5 3-1.7-6"/></symbol>
+<symbol id="repost" viewBox="0 0 32 32">
+  <path d="M7.2 15.4v-3.1A6.3 6.3 0 0 1 13.5 6h10.9"/>
+  <path d="m20.3 2.4 4.3 3.7-4.3 3.8"/>
+  <path d="M24.8 16.6v3.1a6.3 6.3 0 0 1-6.3 6.3H7.6"/>
+  <path d="m11.7 29.6-4.3-3.7 4.3-3.8"/>
+</symbol>
+<symbol id="share" viewBox="0 0 32 32"><path d="m4 7 24-3-9 24-5-10-10-5Z"/><path d="m14 18 6-7"/></symbol>
+<symbol id="save" viewBox="0 0 32 32"><path d="M7 4h18v24l-9-7-9 7Z"/></symbol>
+<symbol id="clock" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11" stroke-dasharray="1.5 3"/><path d="M16 8v9l6 3"/></symbol>
+<symbol id="info" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13"/><path d="M16 14v9m0-15v1"/></symbol>
+<symbol id="play" viewBox="0 0 32 32"><path d="m10 6 15 10-15 10Z"/></symbol>
+<symbol id="trend" viewBox="0 0 32 32"><path d="m3 24 8-8 6 5L28 9m-8 0h8v8"/></symbol>
+</defs></svg>
+<script>
+const defaults = {
+  sources: [
+    ['Profile', 1.5],
+    ['Reels tab', 0.9],
+    ['Stories', 0.6],
+    ['Explore', 0.2],
+    ['Feed', 0.2],
+    ['Search', 0.1]
+  ],
+
+  viewers: [
+    ['Followers', 33.4],
+    ['Non-followers', 66.6]
+  ],
+
+  audience: {
+    age: [
+      ['13-17', 9.2],
+      ['18-24', 76.9],
+      ['25-34', 13.8],
+      ['35-44', 0],
+      ['45-54', 0],
+      ['55-64', 0],
+      ['65+', 0]
+    ],
+
+    country: [
+      ['Morocco', 72],
+      ['France', 12],
+      ['Spain', 8],
+      ['Other', 8]
+    ],
+
+    gender: [
+      ['Women', 48],
+      ['Men', 50],
+      ['Other', 2]
+    ]
+  }
+};
+
+const $ = selector => document.querySelector(selector);
+const $$ = selector => document.querySelectorAll(selector);
+
+let editing = false;
+let activeAudienceGroup = 'age';
+
+function formatPercentage(number) {
+  return String(number).replace('.', ',') + '%';
+}
+
+function parsePercentage(text) {
+  const cleaned = String(text)
+    .replace('%', '')
+    .replace(',', '.')
+    .trim();
+
+  const value = parseFloat(cleaned);
+
+  if (Number.isNaN(value)) {
+    return 0;
+  }
+
+  return Math.max(0, Math.min(100, value));
+}
+
+function createBars(element, data, groupName, gradient = false) {
+  if (!element) {
+    return;
+  }
+
+  element.innerHTML = data.map((item, index) => {
+    const barColor = gradient
+      ? index === 0
+        ? 'var(--accent)'
+        : 'var(--purple)'
+      : 'var(--accent)';
+
+    return `
+      <div
+        class="bar"
+        data-bar-group="${groupName}"
+        data-bar-index="${index}"
+      >
+        <div class="bar-head">
+          <span
+            class="bar-name"
+            contenteditable="${editing}"
+          >${item[0]}</span>
+
+          <b
+            class="bar-percentage"
+            contenteditable="${editing}"
+          >${formatPercentage(item[1])}</b>
+        </div>
+
+        <div class="track">
+          <div
+            class="fill"
+            style="
+              width: ${item[1]}%;
+              background: ${barColor};
+            "
+          ></div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  activateBarEditing();
+}
+
+function renderBars(group = activeAudienceGroup) {
+  activeAudienceGroup = group;
+
+  createBars(
+    $('#sources'),
+    defaults.sources,
+    'sources'
+  );
+
+  createBars(
+    $('#viewerBars'),
+    defaults.viewers,
+    'viewers',
+    true
+  );
+
+  createBars(
+    $('#audienceBars'),
+    defaults.audience[group],
+    `audience-${group}`
+  );
+}
+
+function getBarData(groupName) {
+  if (groupName === 'sources') {
+    return defaults.sources;
+  }
+
+  if (groupName === 'viewers') {
+    return defaults.viewers;
+  }
+
+  if (groupName.startsWith('audience-')) {
+    const audienceGroup = groupName.replace('audience-', '');
+
+    return defaults.audience[audienceGroup];
+  }
+
+  return null;
+}
+
+function activateBarEditing() {
+  $$('.bar').forEach(bar => {
+    const groupName = bar.dataset.barGroup;
+    const index = Number(bar.dataset.barIndex);
+
+    const nameElement = bar.querySelector('.bar-name');
+    const percentageElement =
+      bar.querySelector('.bar-percentage');
+
+    const fillElement = bar.querySelector('.fill');
+    const data = getBarData(groupName);
+
+    if (!data || !data[index]) {
+      return;
+    }
+
+    nameElement.contentEditable = editing;
+    percentageElement.contentEditable = editing;
+
+    nameElement.oninput = () => {
+      if (!editing) {
+        return;
+      }
+
+      data[index][0] =
+        nameElement.textContent.trim() || 'Source';
+    };
+
+    percentageElement.oninput = () => {
+      if (!editing) {
+        return;
+      }
+
+      const percentage = parsePercentage(
+        percentageElement.textContent
+      );
+
+      data[index][1] = percentage;
+      fillElement.style.width = percentage + '%';
+    };
+
+    percentageElement.onblur = () => {
+      const percentage = parsePercentage(
+        percentageElement.textContent
+      );
+
+      data[index][1] = percentage;
+      percentageElement.textContent =
+        formatPercentage(percentage);
+
+      fillElement.style.width = percentage + '%';
+    };
+
+    percentageElement.onkeydown = event => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        percentageElement.blur();
+      }
+    };
+
+    nameElement.onkeydown = event => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        nameElement.blur();
+      }
+    };
+  });
+}
+
+function sync(key, value, source) {
+  $$(`[data-key="${key}"]`).forEach(element => {
+    if (element !== source) {
+      element.textContent = value;
+    }
+  });
+}
+
+function setEditing(enabled) {
+  editing = enabled;
+
+  $$(
+    '[data-key], h2, .muted, .simple span'
+  ).forEach(element => {
+    element.contentEditable = enabled;
+  });
+
+  renderBars(activeAudienceGroup);
+
+  if (enabled) {
+    $$('[data-key]').forEach(element => {
+      element.oninput = () => {
+        sync(
+          element.dataset.key,
+          element.textContent,
+          element
+        );
+      };
+
+      element.onkeydown = event => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          element.blur();
+        }
+      };
+    });
+  }
+}
+
+renderBars();
+
+$$('.tab').forEach(button => {
+  button.onclick = () => {
+    $$('.tab, .panel').forEach(element => {
+      element.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    const selectedPanel = $('#' + button.dataset.tab);
+
+    if (selectedPanel) {
+      selectedPanel.classList.add('active');
+    }
+
+    const tabs = $('.tabs');
+
+    if (tabs) {
+      window.scrollTo({
+        top: tabs.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+});
+
+$$('.pills button').forEach(button => {
+  button.onclick = () => {
+    $$('.pills button').forEach(element => {
+      element.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    activeAudienceGroup = button.dataset.group;
+
+    createBars(
+      $('#audienceBars'),
+      defaults.audience[activeAudienceGroup],
+      `audience-${activeAudienceGroup}`
+    );
+  };
+});
+
+const editButton = $('#editBtn');
+const closeEditorButton = $('#closeEditor');
+
+if (editButton) {
+  editButton.onclick = () => {
+    $('#editor')?.classList.add('open');
+    document.body.classList.add('editor-open');
+    setEditing(true);
+  };
+}
+
+if (closeEditorButton) {
+  closeEditorButton.onclick = () => {
+    $('#editor')?.classList.remove('open');
+    document.body.classList.remove('editor-open');
+    setEditing(false);
+  };
+}
+
+function toast(message) {
+  const toastElement = $('#toast');
+
+  if (!toastElement) {
+    return;
+  }
+
+  toastElement.textContent = message;
+  toastElement.classList.add('show');
+
+  setTimeout(() => {
+    toastElement.classList.remove('show');
+  }, 1800);
+}
+
+['bg', 'card', 'accent'].forEach(colorName => {
+  const input = $('#' + colorName + 'Color');
+
+  if (!input) {
+    return;
+  }
+
+  input.oninput = event => {
+    document.documentElement.style.setProperty(
+      '--' + colorName,
+      event.target.value
+    );
+  };
+});
+
+function getState() {
+  const values = {};
+
+  $$('[data-key]').forEach(element => {
+    values[element.dataset.key] =
+      element.textContent;
+  });
+
+  return {
+    values,
+
+    barData: {
+      sources: defaults.sources,
+      viewers: defaults.viewers,
+      audience: defaults.audience
+    },
+
+    colors: {
+      bg: $('#bgColor')?.value || '#080e12',
+      card: $('#cardColor')?.value || '#252a30',
+      accent:
+        $('#accentColor')?.value || '#ef12c5'
+    }
+  };
+}
+
+function applyState(savedState) {
+  if (!savedState) {
+    return;
+  }
+
+  Object.entries(savedState.values || {}).forEach(
+    ([key, value]) => {
+      sync(key, value);
+    }
+  );
+
+  if (savedState.barData) {
+    if (savedState.barData.sources) {
+      defaults.sources =
+        savedState.barData.sources;
+    }
+
+    if (savedState.barData.viewers) {
+      defaults.viewers =
+        savedState.barData.viewers;
+    }
+
+    if (savedState.barData.audience) {
+      defaults.audience =
+        savedState.barData.audience;
+    }
+  }
+
+  Object.entries(savedState.colors || {}).forEach(
+    ([key, value]) => {
+      const input = $('#' + key + 'Color');
+
+      if (input) {
+        input.value = value;
+      }
+
+      document.documentElement.style.setProperty(
+        '--' + key,
+        value
+      );
+    }
+  );
+
+  renderBars(activeAudienceGroup);
+}
+
+const saveButton = $('#saveBtn');
+
+if (saveButton) {
+  saveButton.onclick = () => {
+    localStorage.setItem(
+      'reelInsights',
+      JSON.stringify(getState())
+    );
+
+    setEditing(false);
+    $('#editor')?.classList.remove('open');
+    document.body.classList.remove('editor-open');
+
+    toast('Saved on this device');
+  };
+}
+
+const exportButton = $('#exportBtn');
+
+if (exportButton) {
+  exportButton.onclick = () => {
+    const data = JSON.stringify(
+      getState(),
+      null,
+      2
+    );
+
+    const file = new Blob(
+      [data],
+      { type: 'application/json' }
+    );
+
+    const url = URL.createObjectURL(file);
+    const link = document.createElement('a');
+
+    link.href = url;
+    link.download = 'reel-insights-data.json';
+
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    URL.revokeObjectURL(url);
+
+    toast('Data exported');
+  };
+}
+
+const importInput = $('#importInput');
+
+if (importInput) {
+  importInput.onchange = event => {
+    const file = event.target.files[0];
+
+    if (!file) {
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      try {
+        const importedState =
+          JSON.parse(reader.result);
+
+        applyState(importedState);
+
+        localStorage.setItem(
+          'reelInsights',
+          JSON.stringify(importedState)
+        );
+
+        toast('Data imported');
+      } catch (error) {
+        toast('Invalid file');
+      }
+    };
+
+    reader.readAsText(file);
+  };
+}
+
+const resetButton = $('#resetBtn');
+
+if (resetButton) {
+  resetButton.onclick = () => {
+    localStorage.removeItem('reelInsights');['topPic','watchPic','engPic'].forEach(k=>localStorage.removeItem(k));
+    location.reload();
+  };
+}
+
+try {
+  const savedState = JSON.parse(
+    localStorage.getItem('reelInsights') ||
+    'null'
+  );
+
+  applyState(savedState);
+} catch (error) {
+  localStorage.removeItem('reelInsights');
+}
+
+let diagrams={views:[0,32,82,82,82],watch:[100,98,94,18,12,2,2],engagement:[15,22,12,23,2,6,6,2]};
+function clampPoint(v){v=Number(v);return Number.isFinite(v)?Math.max(0,Math.min(100,v)):0}
+function drawLine(id,values,height=220){const el=$(id);if(!el||values.length<2)return;el.setAttribute('points',values.map((v,i)=>`${i*(540/(values.length-1))},${height-clampPoint(v)/100*height}`).join(' '))}
+function drawDiagrams(){drawLine('#viewsLine',diagrams.views);drawLine('#watchLine',diagrams.watch);const eng=$('#chartLine');if(eng)drawLine('#chartLine',diagrams.engagement,190)}
+function gallery(inputSelector,imgSelector,boxSelector,key){const input=$(inputSelector),img=$(imgSelector),box=$(boxSelector);if(!input||!img||!box)return;input.onchange=e=>{const file=e.target.files?.[0];if(!file)return;const r=new FileReader();r.onload=()=>{img.src=r.result;box.classList.add('has-image');try{localStorage.setItem(key,r.result)}catch{}};r.readAsDataURL(file)}}
+[['#topInput','#topImage','#topBox','topPic'],['#editTopInput','#topImage','#topBox','topPic'],['#watchInput','#watchImage','#watchBox','watchPic'],['#editWatchInput','#watchImage','#watchBox','watchPic'],['#engInput','#engImage','#engBox','engPic'],['#editEngInput','#engImage','#engBox','engPic']].forEach(x=>gallery(...x));
+[['topPic','#topImage','#topBox'],['watchPic','#watchImage','#watchBox'],['engPic','#engImage','#engBox']].forEach(([key,imgSel,boxSel])=>{const value=localStorage.getItem(key);if(value){$(imgSel).src=value;$(boxSel).classList.add('has-image')}});
+function renderDiagramControls(){const box=$('#diagramControls');if(!box)return;box.innerHTML='';[['Views over time','views'],['How long watched','watch'],['Engagement likes','engagement']].forEach(([title,key])=>{const section=document.createElement('section');section.className='diagram-editor';section.innerHTML=`<h3>${title}</h3><div class="diagram-points">${diagrams[key].map((v,i)=>`<label>Point ${i+1}<input type="number" min="0" max="100" data-diagram="${key}" data-point="${i}" value="${v}"></label>`).join('')}</div><div class="diagram-buttons"><button data-add="${key}">Add point</button><button data-remove="${key}">Remove point</button></div>`;box.appendChild(section)});$$('[data-diagram]').forEach(input=>input.oninput=()=>{diagrams[input.dataset.diagram][+input.dataset.point]=clampPoint(input.value);drawDiagrams()});$$('[data-add]').forEach(b=>b.onclick=()=>{const a=diagrams[b.dataset.add];a.push(a.at(-1)||0);renderDiagramControls();drawDiagrams()});$$('[data-remove]').forEach(b=>b.onclick=()=>{const a=diagrams[b.dataset.remove];if(a.length>2)a.pop();renderDiagramControls();drawDiagrams()})}
+const originalEditClick=editButton.onclick;editButton.onclick=()=>{originalEditClick();renderDiagramControls()};
+const oldGetState=getState;getState=()=>({...oldGetState(),diagrams});
+const oldApplyState=applyState;applyState=s=>{oldApplyState(s);if(s?.diagrams)diagrams=s.diagrams;drawDiagrams()};
+const recordButton=document.createElement('button');recordButton.textContent='Recording mode';recordButton.onclick=()=>{document.body.classList.add('recording-mode');document.body.classList.remove('editor-open');$('#editor').classList.remove('open');setEditing(false)};$('#editor .editor-actions')?.prepend(recordButton);
+document.addEventListener('dblclick',e=>{if(e.clientY<100)document.body.classList.remove('recording-mode')});
+drawDiagrams();
+
+// Final compact mobile editor behavior
+const finalEditor=$('#editor'),finalBackdrop=$('#editorBackdrop');
+function openFinalEditor(){finalEditor?.classList.add('open');finalBackdrop?.classList.add('show');document.body.classList.add('editor-open');setEditing(true);setTimeout(()=>finalEditor?.scrollTo({top:0,behavior:'smooth'}),60)}
+function closeFinalEditor(){finalEditor?.classList.remove('open');finalBackdrop?.classList.remove('show');document.body.classList.remove('editor-open');setEditing(false)}
+editButton.onclick=()=>{openFinalEditor();if(typeof renderDiagramControls==='function')renderDiagramControls()};
+closeEditorButton.onclick=closeFinalEditor;
+finalBackdrop?.addEventListener('click',closeFinalEditor);
+const finalSave=$('#saveBtn');if(finalSave){const previousSave=finalSave.onclick;finalSave.onclick=event=>{if(previousSave)previousSave.call(finalSave,event);closeFinalEditor()}}
+
+// Robust final editing controls
+const statNames={likes:'Likes',comments:'Comments',reposts:'Reposts',shares:'Shares',saves:'Saves',views:'Views',reached:'Viewers',watchTime:'Average watch time',follows:'Follows',profileVisits:'Profile visits',skipRate:'Skip rate',shareRate:'Share rate',likeRate:'Like rate',saveRate:'Save rate',repostRate:'Repost rate',commentRate:'Comment rate'};
+function buildLiveControls(){
+ const statBox=$('#liveStatControls'),barBox=$('#liveBarControls');if(!statBox||!barBox)return;
+ const seen=new Set();statBox.innerHTML='';
+ $$('[data-key]').forEach(el=>{const key=el.dataset.key;if(seen.has(key))return;seen.add(key);const row=document.createElement('label');row.className='live-control-row';row.innerHTML=`<span>${statNames[key]||key}</span><input type="text" data-live-stat="${key}" value="${String(el.textContent).replace(/"/g,'&quot;')}">`;statBox.appendChild(row)});
+ $$('[data-live-stat]').forEach(input=>{input.onfocus=()=>{const el=$(`[data-key="${input.dataset.liveStat}"]`);if(el){$$('.edit-section-focus').forEach(x=>x.classList.remove('edit-section-focus'));el.classList.add('edit-section-focus');el.scrollIntoView({behavior:'smooth',block:'center'})}};input.oninput=()=>sync(input.dataset.liveStat,input.value,input)});
+ barBox.innerHTML='';
+ [['sources',defaults.sources],['viewers',defaults.viewers]].forEach(([group,list])=>list.forEach((item,index)=>{const row=document.createElement('label');row.className='live-control-row';row.innerHTML=`<span>${item[0]}</span><input type="number" min="0" max="100" step="0.1" data-live-bar="${group}" data-live-index="${index}" value="${item[1]}">`;barBox.appendChild(row)}));
+ $$('[data-live-bar]').forEach(input=>input.oninput=()=>{const list=input.dataset.liveBar==='sources'?defaults.sources:defaults.viewers;list[+input.dataset.liveIndex][1]=parsePercentage(input.value);renderBars(activeAudienceGroup)});
+}
+function renderDiagramControlsFixed(){
+ const box=$('#diagramControls');if(!box)return;box.innerHTML='';
+ [['Views over time','views'],['How long watched','watch'],['Engagement likes','engagement']].forEach(([title,key])=>{const section=document.createElement('section');section.className='diagram-editor';section.innerHTML=`<h3>${title}</h3><div class="diagram-points">${diagrams[key].map((v,i)=>`<label>Point ${i+1}<input type="number" min="0" max="100" inputmode="decimal" data-fixed-diagram="${key}" data-fixed-point="${i}" value="${v}"></label>`).join('')}</div><div class="diagram-buttons"><button type="button" data-fixed-add="${key}">Add point</button><button type="button" data-fixed-remove="${key}">Remove point</button></div>`;box.appendChild(section)});
+ $$('[data-fixed-diagram]').forEach(input=>{const update=()=>{diagrams[input.dataset.fixedDiagram][+input.dataset.fixedPoint]=clampPoint(input.value);drawDiagrams()};input.addEventListener('input',update);input.addEventListener('change',update)});
+ $$('[data-fixed-add]').forEach(button=>button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();const points=diagrams[button.dataset.fixedAdd];points.push(points.at(-1)??0);renderDiagramControlsFixed();drawDiagrams()}));
+ $$('[data-fixed-remove]').forEach(button=>button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();const points=diagrams[button.dataset.fixedRemove];if(points.length>2)points.pop();renderDiagramControlsFixed();drawDiagrams()}));
+}
+function openWorkingEditor(){finalEditor?.classList.add('open');finalBackdrop?.classList.add('show');document.body.classList.add('editor-open');setEditing(true);buildLiveControls();renderDiagramControlsFixed();setTimeout(()=>finalEditor?.scrollTo({top:0,behavior:'auto'}),50)}
+editButton.onclick=openWorkingEditor;
+closeEditorButton.onclick=()=>{closeFinalEditor();$$('.edit-section-focus').forEach(x=>x.classList.remove('edit-section-focus'))};
+// Views over time filter buttons now respond visually and redraw the chart
+$$('.filter-row button').forEach(button=>button.addEventListener('click',event=>{event.preventDefault();$$('.filter-row button').forEach(x=>x.classList.remove('active'));button.classList.add('active');drawDiagrams()}));
+</script></body></html>
